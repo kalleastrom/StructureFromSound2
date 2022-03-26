@@ -12,7 +12,41 @@ problems.
 This is a continuation of the earlier StructureFromSound project
 and builds on 
 
-If you use this code, please cite
+If you use this code, please cite the three relevant papers that it builds upon
+
+{\AA}str{\"o}m}, K., Larsson, M., Flood, G., & Oskarsson, M. (2021, August). Extension of Time-Difference-of-Arrival Self Calibration Solutions Using Robust Multilateration. In 2021 29th European Signal Processing Conference (EUSIPCO) (pp. 870-874). IEEE.
+
+@inproceedings{aastrom2021extension,
+  title={Extension of Time-Difference-of-Arrival Self Calibration Solutions Using Robust Multilateration},
+  author={{\AA}str{\"o}m, Kalle and Larsson, Martin and Flood, Gabrielle and Oskarsson, Magnus},
+  booktitle={2021 29th European Signal Processing Conference (EUSIPCO)},
+  pages={870--874},
+  year={2021},
+  organization={IEEE}
+}
+
+Larsson, M., Flood, G., Oskarsson, M., & {\AA}str{\"o}m}, K. (2021, June). Fast and robust stratified self-calibration using time-difference-of-arrival measurements. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 4640-4644). IEEE.
+
+@inproceedings{larsson2021fast,
+  title={Fast and robust stratified self-calibration using time-difference-of-arrival measurements},
+  author={Larsson, Martin and Flood, Gabrielle and Oskarsson, Magnus and {\AA}str{\"o}m, Kalle},
+  booktitle={ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={4640--4644},
+  year={2021},
+  organization={IEEE}
+}
+
+
+Larsson, M., Flood, G., Oskarsson, M., & {\AA}str{\"o}m} K. (2020, May). Upgrade methods for stratified sensor network self-calibration. In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 4851-4855). IEEE.
+
+@inproceedings{larsson2020upgrade,
+  title={Upgrade methods for stratified sensor network self-calibration},
+  author={Larsson, Martin and Flood, Gabrielle and Oskarsson, Magnus and {\AA}str{\"o}m, Kalle},
+  booktitle={ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={4851--4855},
+  year={2020},
+  organization={IEEE}
+}
 
 Simayijiang Zhayida, Simon Segerblom Rex, Yubin Kuang, Fredrik Andersson, Kalle {\AA}str{\"o}m}, 
 An Automatic System for Acoustic Microphone Geometry Calibration based on Minimal Solvers, 
@@ -46,6 +80,10 @@ Other relevant papers are:
 }
 
 ## Code
+
+Clone this repository
+[https://github.com/kalleastrom/StructureFromSound2]
+
 
 Run main.m 
 
