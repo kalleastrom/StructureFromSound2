@@ -14,15 +14,16 @@ addpath(genpath(pwd))
 
 %% Set folder names
 
-ex.savefiledir = '/Users/kalle/Documents/projekt/tdoa/matlab/preprocessfiler_nya';
+ex.loadfiledir = '/Users/kalle/Documents/projekt/tdoa/matlab/preprocessfiler_nya';
+ex.savefiledir = '/Users/kalle/Documents/projekt/github/StructureFromSound2/tmp/';
 ex.XXXX = '0014';
-ex.savename_raw   = fullfile(ex.savefiledir,['music_' ex.XXXX '_raw_sound']);
-ex.savename_gt   = fullfile(ex.savefiledir,['music_' ex.XXXX '_gt']);
+ex.loadname_raw   = fullfile(ex.loadfiledir,['music_' ex.XXXX '_raw_sound']);
+ex.loadname_gt   = fullfile(ex.loadfiledir,['music_' ex.XXXX '_gt']);
 
 
 %% Read sound files
 
-load(ex.savename_raw);
+load(ex.loadname_raw);
 
 %% Correlation: GCC-PHAT. Find detections
 
@@ -83,7 +84,7 @@ ztmp = ztmp+0.1; % Hack. Somehow the solver breaks down if there are zeros in th
 
 [r, s, o, sol] = tdoa(ztmp, 'display', 'iter', 'sigma', 0.01);
 
-%% Visualize results
+%% Visualize result after initial TDOA estimation
 
 zcalc=tdoa_calc_u_from_xyo(r,s,o);
 
@@ -134,7 +135,7 @@ asol4c = more_spoints_v5_bundle_all_channels(asol4c,u,raw.speedofsound,raw.a_sr,
 
 %% Load ground truth
 
-load(ex.savename_gt); % Ground Truth gt
+load(ex.loadname_gt); % Ground Truth gt
 gt.rgt = rgt;
 gt.sgt_resamp = sgt_resamp;
 gt.sgt_mocap = s_gt;
@@ -169,4 +170,24 @@ figure(6); evalres = plot_solution(asol4c,gt);
 
 %evaluate_solution(asol_out2,gt,OK);
 
+%% Visualize final results
+
+r = asol4c.r;
+s = asol4c.s;
+
+% zcalc=tdoa_calc_u_from_xyo(r,s,o);
+% 
+% figure(20);
+% plot(sum( abs(zcalc-ztmp)<0.02 ),'*');
+
+oks = find(sqrt(sum(s.^2))<4);
+%oks = find(sum( abs(zcalc-ztmp)<0.02 )>7);
+%oks = find(sum( abs(zcalc-ztmp)<0.02 )>-2);
+figure(99);
+hold off
+plot3(r(1,:),r(2,:),r(3,:),'g*');
+hold on
+%plot3(s(1,oks),s(2,oks),s(3,oks),'b-');
+plot3(s(1,oks),s(2,oks),s(3,oks),'b*');
+%axis([-10 10 -10 10 -10 10])
 
