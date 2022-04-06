@@ -6,5 +6,5 @@ if nargin<3,
 end
 
 evalres = evaluate_solution(asol,gt,OK);
-display(['#ok s-punkter ' num2str(sum(evalres.sok)) '/' num2str(sum(OK))]);
+display(['#ok s-punkter ' num2str(sum(evalres.sok.*OK)) '/' num2str(sum(OK))]);
 

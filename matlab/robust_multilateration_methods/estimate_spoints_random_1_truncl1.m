@@ -32,10 +32,23 @@ for j = 1:size(s_out,2);
     nrinl = size(udata,2);
     if nrinl>= inl_threshold, % We need at least 3 measurements
         
-         %         reproj = sqrt(sum( (repmat(stmp,1,size(udata,2))-r(:,udata(2,:))).^2 )) - ...
-        %             sqrt(sum( (repmat(stmp,1,size(udata,2))-r(:,udata(1,:))).^2 ));
-        s_out(:,j)=stmp;
-    end
+        KK = 1;
+        best_fel = Inf;
+        for ii = 1:KK,
+            etts = 5*randn(3,1); % Random initial guess
+            [stmp,res_out,jac_out]=tdoa_multilaterate_truncl1(udata,r,etts);
+            %         reproj = sqrt(sum( (repmat(stmp,1,size(udata,2))-r(:,udata(2,:))).^2 )) - ...
+            %             sqrt(sum( (repmat(stmp,1,size(udata,2))-r(:,udata(1,:))).^2 ));
+            res = res_out;
+            fel = sum( min(abs(res),0.2));
+            if fel<best_fel,
+                best_fel=fel;
+                best_s = stmp;
+            end
+            
+        end
+        s_out(:,j)=best_s;
+     end
 end
 
 asol_out.r = r;

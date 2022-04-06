@@ -26,7 +26,7 @@ evalres.sok = sok;
 tmp = sok & (hh>=3);
 tmp = sok;
 
-evalres.nrok = sum(tmp);
+evalres.nrok = sum(tmp.*OK);
 evalres.maxok = sum(OK);
 evalres.r_new = r_new;
 evalres.s_new = s_new;

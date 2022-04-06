@@ -5,6 +5,36 @@ Code for the Structure from Sound project (SFS)
 The aim of the project is to develop tools for estimating microphone positions
 and sound source movements using a set of audio files as input only.
 
+
+## Code and data and get going
+
+1. Clone this repository
+[https://github.com/kalleastrom/StructureFromSound2]
+2. Also clone the two repositories
+[https://github.com/martinkjlarsson/upgrade-methods]
+[https://github.com/martinkjlarsson/tdoa-self-calibration]
+3. Download data from
+...
+and put the files in a folder
+4. Start matlab and open the matlab file 
+StructureFromSound2/matlab/demo_full_system_from_raw_musicfiles.m
+in the editor. 
+Change line 9 and put the path to where you have the clone for the 'tdoa-self-calibration' above
+Change line 11 and put the path to where you have the clone for the 'upgrade-methods' above.
+Change line 17 and put the path to where you have the data
+Change line 18 and put the path to where you would like to store intermediate results. 
+Run demo_full_system_from_raw_musicfiles and keep your fingers crossed that it works. 
+
+## Data
+
+Example data for the system can be downloaded from the
+StructureFromSoundDatabase (sfsdb)
+at [http://vision.maths.lth.se/sfsdb/](http://vision.maths.lth.se/sfsdb/)
+
+
+## Old
+
+
 This is a challenging parameter estimation problem. 
 For the project we also develop tools that can be of use for other TDOA type
 problems.
@@ -79,13 +109,24 @@ Other relevant papers are:
   publisher = "IEEE--Institute of Electrical and Electronics Engineers Inc.",
 }
 
-## Code
+## Code and data and get going
 
-Clone this repository
+1. Clone this repository
 [https://github.com/kalleastrom/StructureFromSound2]
-
-
-Run main.m 
+2. Also clone the two repositories
+[https://github.com/martinkjlarsson/upgrade-methods]
+[https://github.com/martinkjlarsson/tdoa-self-calibration]
+3. Download data from
+...
+and put the files in a folder
+4. Start matlab and open the matlab file 
+StructureFromSound2/matlab/demo_full_system_from_raw_musicfiles.m
+in the editor. 
+Change line 9 and put the path to where you have the clone for the 'tdoa-self-calibration' above
+Change line 11 and put the path to where you have the clone for the 'upgrade-methods' above.
+Change line 17 and put the path to where you have the data
+Change line 18 and put the path to where you would like to store intermediate results. 
+Run demo_full_system_from_raw_musicfiles and keep your fingers crossed that it works. 
 
 ## Data
 

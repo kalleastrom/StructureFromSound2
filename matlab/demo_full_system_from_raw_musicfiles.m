@@ -77,9 +77,9 @@ speedofsound = detections.v;
 % 5 microphones
 
 ztmp = z;
-okcols = find(sum(isfinite(z))>=5);
+okcols = find(sum(isfinite(z))>=5); % Select those columns (times) that have at least 5 measurements
 ztmp = z(:,okcols);
-ztmp = ztmp+0.1; % Hack. Somehow the solver breaks down if there are zeros in the ztmp matrix. 
+ztmp = ztmp+0.1; % Hack. Somehow the solver breaks down if there are zeros in the ztmp matrix. Why? 
                  % Add 0.1
 
 [r, s, o, sol] = tdoa(ztmp, 'display', 'iter', 'sigma', 0.01);
@@ -108,13 +108,14 @@ ylim([-5 5])
 
 %% Refine sound source positions - eusipco 2021 paper
 
+% Choose one of several possible methods, see EUSIPCO 2021 paper
 % asol_out = estimate_spoints_ChanHo(r,u,raw.speedofsound,raw.a_sr);
 % asol_out = estimate_spoints_velasco(r,u,raw.speedofsound,raw.a_sr);
 % asol_out = estimate_spoints_random_1_truncl1(r,u,raw.speedofsound,raw.a_sr);
 % asol_out = estimate_spoints_random_1_l1(r,u,raw.speedofsound,raw.a_sr);
 % asol_out = estimate_spoints_random_10_truncl1(r,u,raw.speedofsound,raw.a_sr);
 % asol_out = estimate_spoints_nonlinearleastsquares(r,u,raw.speedofsound,raw.a_sr);
-asol_out = estimate_spoints_ransac_truncl2(r,u,raw.speedofsound,raw.a_sr);
+asol_out = estimate_spoints_ransac_truncl2(r,u,raw.speedofsound,raw.a_sr); % Proposed ransac+opt method
 
 figure(21);
 plot(asol_out.s','*');
