@@ -3,19 +3,10 @@
 
 speedofsound = 343.2;
 
-%% Add paths, import these from github?
-
-% path to tdoa solver code
-addpath(genpath('/Users/kalle/Documents/projekt/github/tdoa-self-calibration/'));
-% path to upgrade solvers
-addpath(genpath('/Users/kalle/Documents/projekt/github/upgrade-methods/'));
-
-addpath(genpath(pwd))
-
 %% Set folder names
 
-ex.loadfiledir = '/Users/kalle/Documents/projekt/tdoa/matlab/preprocessfiler_nya';
-ex.savefiledir = '/Users/kalle/Documents/projekt/github/StructureFromSound2/tmp/';
+ex.loadfiledir = fullfile(getenv('SFS_ROOT'), 'data', 'music');
+ex.savefiledir = fullfile(getenv('SFS_ROOT'), 'result');
 ex.XXXX = '0014';
 ex.loadname_raw   = fullfile(ex.loadfiledir,['music_' ex.XXXX '_raw_sound']);
 ex.loadname_gt   = fullfile(ex.loadfiledir,['music_' ex.XXXX '_gt']);

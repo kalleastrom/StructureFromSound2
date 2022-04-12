@@ -1,0 +1,9 @@
+[submodule "libs/upgrade-methods"]
+	path = libs/upgrade-methods
+	url = https://github.com/martinkjlarsson/upgrade-methods
+[submodule "libs/tdoa-self-calibration"]
+	path = libs/tdoa-self-calibration
+	url = https://github.com/martinkjlarsson/tdoa-self-calibration
+[submodule "libs/eigen"]
+	path = libs/eigen
+	url = https://gitlab.com/libeigen/eigen.git

@@ -19,7 +19,7 @@ n_files = length(file_list);
 n_realsim = length(real_or_simulated_list);
 n_methods = length(method_list);
 
-ex.loadfiledir = '/Users/kalle/Documents/projekt/github/StructureFromSound2/data/eusipco_2021_detection_files/';
+ex.loadfiledir = fullfile(getenv('SFS_ROOT'), 'data', 'eusipco_2021_detection_files');
 ex.speedofsound = 343.2;
 ex.a_sr = 96000;
 
