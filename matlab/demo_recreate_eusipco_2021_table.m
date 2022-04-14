@@ -1,8 +1,6 @@
 %%
 speedofsound = 343.2;
 
-%% Add paths
-addpath(genpath(pwd))
 
 %% Set folder names
 file_list = {'0008','0009','0010','0011','0012','0014','0015'}; % the seven datasets
@@ -19,15 +17,13 @@ n_files = length(file_list);
 n_realsim = length(real_or_simulated_list);
 n_methods = length(method_list);
 
-ex.loadfiledir = '/Users/kalle/Documents/projekt/github/StructureFromSound2/data/eusipco_2021_detection_files/';
+ex.loadfiledir = fullfile(getenv('SFS_ROOT'), 'data', 'eusipco_2021_detection_files');
 ex.speedofsound = 343.2;
 ex.a_sr = 96000;
 
 %
-if 0,
-    all_nr_ok = zeros(n_files,n_realsim,n_methods);
-    max_nr_ok = zeros(n_files,n_realsim,n_methods);
-end
+all_nr_ok = zeros(n_files,n_realsim,n_methods);
+max_nr_ok = zeros(n_files,n_realsim,n_methods);
 
 
 %% Make the table
