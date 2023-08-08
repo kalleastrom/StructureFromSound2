@@ -55,7 +55,7 @@ settings.channels = 1:12;
 % end
 %
 %scores = gccscores_erik(double(raw.aaint)'/(2^24),settings);
-scores = gccscores_erik(double(raw.aaint)',settings);
+scores = gccscores(double(raw.aaint)',settings);
 
 %T = size(raw.aaint,1)/96000;
 %tn = size(scores{1,2},2);
