@@ -19,8 +19,7 @@ git clone --recurse-submodules git@github.com:kalleastrom/StructureFromSound2.gi
 git submodule init
 git submodule update
 ```
-3. Download data from
-...
+3. Download data from [here](https://vision.maths.lth.se/erik_test/)
 and put the files in the `data` folder
 4. Start matlab and execute the setup script to generate mex files and set paths.
 ```
@@ -29,14 +28,13 @@ run setup.m
 5. Open the matlab file
 StructureFromSound2/matlab/demo_full_system_from_raw_musicfiles.m
 in the editor.
-Change line 8 if you put the data somewhere else.
+Change line 14 if you put the data somewhere else.
 Run demo_full_system_from_raw_musicfiles and keep your fingers crossed that it works.
 
 ## Data
 
 Example data for the system can be downloaded from the
-StructureFromSoundDatabase (sfsdb)
-at [http://vision.maths.lth.se/sfsdb/](http://vision.maths.lth.se/sfsdb/)
+[StructureFromSoundDatabase (sfsdb)](https://vision.maths.lth.se/erik_test/)
 
 ## Citation
 If you use this code, please cite the three relevant papers that it builds upon
