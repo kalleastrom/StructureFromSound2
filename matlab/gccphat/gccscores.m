@@ -33,6 +33,8 @@ scores = cell(settings.mm);
 for k = find(indu)'
     [ii,jj] = ind2sub(size(ind),k);
     tmp = fftframes{jj}.*conj(fftframes{ii});
+    temptemp = tmp.*settings.wf(tmp);
+    temptemp(300:(length(temptemp) - 300)) = 0; % removes high frequency contribution, which will not help because sound source is moving
     tmp = fftshift(ifft(tmp.*settings.wf(tmp)),1);
     scores{ii,jj} = tmp(round(end/2)-settings.sw:round(end/2)+settings.sw,:);
 end
